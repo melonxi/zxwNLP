@@ -1,9 +1,9 @@
 # zxwNLP
 项目对比了LSTM+各类attention机制在IMDB数据集下的文本分类的效果  
 来源如下：  
-[Attention-Based Bidirectional Long Short-Term Memory Networks for Relation Classiﬁcation](https://www.aclweb.org/anthology/P16-2034)
-[Feed Forward Networks with Attention Can Solve Some Long-Term Memory Problems](https://arxiv.org/pdf/1512.08756.pdf)  
-[Hierarchical Attention Networks for Document Classiﬁcation](https://www.aclweb.org/anthology/N16-1174)
+[Attention-Based Bidirectional Long Short-Term Memory Networks for Relation Classiﬁcation](https://www.aclweb.org/anthology/P16-2034)  
+[Feed Forward Networks with Attention Can Solve Some Long-Term Memory Problems](https://arxiv.org/pdf/1512.08756.pdf)    
+[Hierarchical Attention Networks for Document Classiﬁcation](https://www.aclweb.org/anthology/N16-1174)  
 
 | Model Name | Accuracy | F1 |
 | ------ | ------ | ------ |
