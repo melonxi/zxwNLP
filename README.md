@@ -37,7 +37,9 @@
 Attention机制： 
  
 ${H}= {[h_1,h_2···h_t···h_T]}$ :LSTM所有时刻的隐状态输出组成的矩阵  
-$$\begin{aligned} M &=\tanh (H) \\ \alpha &=\operatorname{softmax}\left(w^{T} M\right) \\ r &=H \alpha^{T} \end{aligned}$$
+$$\begin{aligned} M &=\tanh (H)$$ 
+$$\alpha &=\operatorname{softmax}\left(w^{T} M\right)$$ 
+$$r &=H \alpha^{T} \end{aligned}$$
 
 $Query = w$, 是一个 长为LSTM_outdim的向量。也即为Attention层学习参数，归纳了整个分类任务的关键信息。  
 $Value = Key = h_t$, 通过内积求 $Query$ 和 $Value$ 的相似度，让网络了解应该重点关注句子的哪些时间步上的信息。
@@ -53,10 +55,12 @@ Attention机制：
 
 在实验中仅使用Word Attention 
 
-$$\begin{aligned} u_{i t} &=\tanh \left(W_{w} h_{i t}+b_{w}\right) \\ \alpha_{i t} &=\frac{\exp \left(u_{i t}^{\top} u_{w}\right)}{\sum_{t} \exp \left(u_{i t}^{\top} u_{w}\right)} \\ s_{i} &=\sum_{t} \alpha_{i t} h_{i t} \end{aligned}$$
+$$\begin{aligned} u_{i t} &=\tanh \left(W_{w} h_{i t}+b_{w}\right)$$ 
+$$\alpha_{i t} &=\frac{\exp \left(u_{i t}^{\top} u_{w}\right)}{\sum_{t} \exp \left(u_{i t}^{\top} u_{w}\right)}$$ 
+$$s_{i} &=\sum_{t} \alpha_{i t} h_{i t} \end{aligned}$$
 
 $Query = u_w$, 是一个 长为LSTM_outdim的向量。也即为Attention层学习参数，归纳了整个分类任务的关键信息。  
-$Value = W_w{Key}+{b_w}\\Key=h_t$ 
+$Value = W_w{Key}+{b_w}$, $Key=h_t$ 
 通过学习得到参数，利用参数将 $Key$ 转化为 $value$ 
 通过内积求 $Query$ 和 $Value$ 的相似度，让网络了解应该重点关注句子的哪些时间步上的信息。
 
@@ -67,7 +71,7 @@ $Value = W_w{Key}+{b_w}\\Key=h_t$
 <div align=center><img width="50%" height="50%" src="http://ww2.sinaimg.cn/large/006tNc79gy1g4klvqnfndj30ze0q2tbu.jpg"/></div >
 
 $Value = Key = h_t$  
-将学习到{uery}和利用{Query}求各个{Value}权重的过程都通过一个学习得到的MLP网络完成
+将学习到 ${uery}$ 和利用 ${Query}$ 求各个 ${Value}$ 权重的过程都通过一个学习得到的MLP网络完成
 
 #### 1.1.4 代码详情
 ## 目录结构描述 ##
