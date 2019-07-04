@@ -37,9 +37,9 @@
 Attention机制： 
  
 ${H}= {[h_1,h_2···h_t···h_T]}$ :LSTM所有时刻的隐状态输出组成的矩阵  
-$$\begin{aligned} M &=\tanh (H)$$ 
-$$\alpha &=\operatorname{softmax}\left(w^{T} M\right)$$ 
-$$r &=H \alpha^{T} \end{aligned}$$
+$$\begin{aligned} M &=\tanh (H)\end{aligned}$$ 
+$$\alpha =\operatorname{softmax}\left(w^{T} M\right)$$ 
+$$r =H \alpha^{T} $$
 
 $Query = w$, 是一个 长为LSTM_outdim的向量。也即为Attention层学习参数，归纳了整个分类任务的关键信息。  
 $Value = Key = h_t$, 通过内积求 $Query$ 和 $Value$ 的相似度，让网络了解应该重点关注句子的哪些时间步上的信息。
