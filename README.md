@@ -55,9 +55,9 @@ Attention机制：
 
 在实验中仅使用Word Attention 
 
-$$\begin{aligned} u_{i t} &=\tanh \left(W_{w} h_{i t}+b_{w}\right)$$ 
-$$\alpha_{i t} &=\frac{\exp \left(u_{i t}^{\top} u_{w}\right)}{\sum_{t} \exp \left(u_{i t}^{\top} u_{w}\right)}$$ 
-$$s_{i} &=\sum_{t} \alpha_{i t} h_{i t} \end{aligned}$$
+$$\begin{aligned} u_{i t} &=\tanh \left(W_{w} h_{i t}+b_{w}\right)\end{aligned}$$ 
+$$\alpha_{i t} =\frac{\exp \left(u_{i t}^{\top} u_{w}\right)}{\sum_{t} \exp \left(u_{i t}^{\top} u_{w}\right)}$$ 
+$$s_{i} =\sum_{t} \alpha_{i t} h_{i t}$$
 
 $Query = u_w$, 是一个 长为LSTM_outdim的向量。也即为Attention层学习参数，归纳了整个分类任务的关键信息。  
 $Value = W_w{Key}+{b_w}$, $Key=h_t$ 
